@@ -1,0 +1,7 @@
+# 54587 octets, 500 lignes
+# colonnes (schéma TPCx-BB) : ca_address_sk|ca_address_id|ca_street_number|ca_street_name|ca_street_type|ca_suite_number|ca_city|ca_county|ca_state|ca_zip|ca_country|ca_gmt_offset|ca_location_type
+49500|AAAAAAAAAAAACVFW|575|Pine|Pkwy|JcbRPPJch|Decatur|Meade County|KS|70585|United States|-6|condo
+49501|AAAAAAAAAAAACVFX|29|Lakeview Ash|Boulevard|zNSxKw|Barnes|Kerr County|TX|86749|United States|-6|single family
+49502|AAAAAAAAAAAACVFY|115|8th 6th|Blvd|FEzf4gqvu|Millville|Lincoln County|MS|40558|United States|-6|condo
+49503|AAAAAAAAAAAACVFZ|813|West|Court|KRq|Wright|Floyd County|GA|20830|United States|-5|apartment
+49504|AAAAAAAAAAAACVGA|542|Elm|RD|9BV|Horton|Indiana County|PA|45967|United States|-5|apartment

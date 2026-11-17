@@ -1,0 +1,375 @@
+RAPPORT DES CONTRÔLES QUALITÉ - KIT TPCx-BB 
+
+1. FICHIERS, LIGNES ET STRUCTURE
+kit          fichier                               octets      lignes  col.  structure
+data         customer.dat                      13 279 063      99 000    18  OK (nb de champs constant)
+data         customer_address.dat               5 387 229      49 500    13  OK (nb de champs constant)
+data         customer_demographics.dat         77 753 083   1 920 800     9  OK (nb de champs constant)
+data         date_dim.dat                      15 395 800     109 573    28  OK (nb de champs constant)
+data         household_demographics.dat           155 100       7 200     5  OK (nb de champs constant)
+data         income_band.dat                          327          20     3  OK (nb de champs constant)
+data         inventory.dat                    424 943 678  23 255 100     4  OK (nb de champs constant)
+data         item.dat                           6 799 286      17 820    22  OK (nb de champs constant)
+data         item_marketprices.dat              4 201 170      89 100     6  OK (nb de champs constant)
+data         item_marketprices_audit.csv              273           5        fichier d'audit CSV
+data         product_reviews.dat               56 355 389      89 991     8  OK (nb de champs constant)
+data         promotion.dat                         46 396         300    19  OK (nb de champs constant)
+data         reason.dat                             3 105          35     3  OK (nb de champs constant)
+data         ship_mode.dat                          1 220          20     6  OK (nb de champs constant)
+data         store.dat                              3 386          12    29  OK (nb de champs constant)
+data         store_returns.dat                  4 337 400      37 902    20  OK (nb de champs constant)
+data         store_sales.dat                   92 764 700     667 579    23  OK (nb de champs constant)
+data         time_dim.dat                       5 107 780      86 400    10  OK (nb de champs constant)
+data         warehouse.dat                            584           5    14  OK (nb de champs constant)
+data         web_clickstreams.dat             178 722 140   6 770 550     6  OK (nb de champs constant)
+data         web_page.dat                           8 040          60    14  OK (nb de champs constant)
+data         web_returns.dat                    5 383 513      38 487    24  OK (nb de champs constant)
+data         web_sales.dat                    133 790 574     668 052    34  OK (nb de champs constant)
+data         web_site.dat                           8 838          30    26  OK (nb de champs constant)
+data_refresh customer.dat                         134 360       1 000    18  OK (nb de champs constant)
+data_refresh customer_address.dat                  54 587         500    13  OK (nb de champs constant)
+data_refresh inventory.dat                      4 292 915     234 900     4  OK (nb de champs constant)
+data_refresh item.dat                              69 173         180    22  OK (nb de champs constant)
+data_refresh item_marketprices.dat                 42 547         900     6  OK (nb de champs constant)
+data_refresh item_marketprices_audit.csv          151 009      17 986        fichier d'audit CSV
+data_refresh product_reviews.dat                  573 685         909     8  OK (nb de champs constant)
+data_refresh store_returns.dat                     48 825         426    20  OK (nb de champs constant)
+data_refresh store_sales.dat                      922 171       6 632    23  OK (nb de champs constant)
+data_refresh web_clickstreams.dat               1 821 864      68 988     6  OK (nb de champs constant)
+data_refresh web_returns.dat                       55 952         400    24  OK (nb de champs constant)
+data_refresh web_sales.dat                      1 378 425       6 879    34  OK (nb de champs constant)
+
+2. VALEURS NULLES (colonnes avec au moins une valeur vide, lot data/)
+  customer
+      c_birth_year                            30  (0.03 %)
+      c_current_hdemo_sk                      29  (0.029 %)
+      c_salutation                            28  (0.028 %)
+      c_last_review_date                      28  (0.028 %)
+      c_preferred_cust_flag                   27  (0.027 %)
+      c_login                                 26  (0.026 %)
+      c_first_shipto_date_sk                  25  (0.025 %)
+      c_birth_month                           25  (0.025 %)
+      ... et 6 autres colonnes avec moins de 0.023 % de vides
+  customer_address
+      ca_suite_number                         23  (0.046 %)
+      ca_street_number                        14  (0.028 %)
+      ca_zip                                  14  (0.028 %)
+      ca_street_type                          13  (0.026 %)
+      ca_street_name                          10  (0.02 %)
+  customer_demographics
+      cd_dep_count                           544  (0.028 %)
+      cd_purchase_estimate                   507  (0.026 %)
+      cd_education_status                    506  (0.026 %)
+      cd_credit_rating                       506  (0.026 %)
+      cd_dep_college_count                   500  (0.026 %)
+      cd_dep_employed_count                  488  (0.025 %)
+      cd_gender                              486  (0.025 %)
+      cd_marital_status                      485  (0.025 %)
+  date_dim                     aucune valeur vide
+  household_demographics
+      hd_income_band_sk                        2  (0.028 %)
+      hd_dep_count                             2  (0.028 %)
+      hd_vehicle_count                         2  (0.028 %)
+      hd_buy_potential                         1  (0.014 %)
+  income_band                  aucune valeur vide
+  inventory
+      inv_quantity_on_hand                 5 999  (0.026 %)
+  item
+      i_rec_end_date                      17 820  (100.0 %)
+      i_brand_id                               8  (0.045 %)
+      i_brand                                  6  (0.034 %)
+      i_item_desc                              4  (0.022 %)
+  item_marketprices
+      imp_end_date                            30  (0.034 %)
+      imp_competitor_price                    29  (0.033 %)
+  product_reviews
+      pr_review_content                        5  (0.006 %)
+  promotion
+      p_channel_radio                          1  (0.333 %)
+  reason                       aucune valeur vide
+  ship_mode                    aucune valeur vide
+  store
+      s_rec_end_date                          12  (100.0 %)
+  store_returns
+      sr_addr_sk                              42  (0.111 %)
+      sr_cdemo_sk                             21  (0.055 %)
+      sr_hdemo_sk                             15  (0.04 %)
+      sr_reason_sk                            11  (0.029 %)
+  store_sales
+      ss_addr_sk                             448  (0.067 %)
+      ss_hdemo_sk                            295  (0.044 %)
+      ss_cdemo_sk                            238  (0.036 %)
+      ss_promo_sk                            158  (0.024 %)
+  time_dim
+      t_meal_time                         50 400  (58.333 %)
+  warehouse                    aucune valeur vide
+  web_clickstreams
+      wcs_sales_sk                     6 102 498  (90.133 %)
+      wcs_user_sk                      2 853 461  (42.145 %)
+      wcs_web_page_sk                        164  (0.002 %)
+  web_page
+      wp_rec_end_date                         60  (100.0 %)
+  web_returns
+      wr_returning_cdemo_sk                   63  (0.164 %)
+      wr_returning_addr_sk                    57  (0.148 %)
+      wr_refunded_addr_sk                     42  (0.109 %)
+      wr_refunded_cdemo_sk                    40  (0.104 %)
+      wr_returning_hdemo_sk                   33  (0.086 %)
+      wr_refunded_hdemo_sk                    19  (0.049 %)
+      wr_web_page_sk                          10  (0.026 %)
+      wr_reason_sk                             7  (0.018 %)
+  web_sales
+      ws_ship_hdemo_sk                       495  (0.074 %)
+      ws_ship_cdemo_sk                       492  (0.074 %)
+      ws_ship_addr_sk                        398  (0.06 %)
+      ws_bill_cdemo_sk                       309  (0.046 %)
+      ws_bill_hdemo_sk                       288  (0.043 %)
+      ws_bill_addr_sk                        272  (0.041 %)
+      ws_ship_mode_sk                        170  (0.025 %)
+      ws_web_page_sk                         164  (0.025 %)
+      ... et 3 autres colonnes avec moins de 0.024 % de vides
+  web_site
+      web_rec_end_date                        30  (100.0 %)
+
+3. DOUBLONS
+  data         customer                 clé c_customer_sk                                    doublons de clé :      0   lignes identiques : 0
+  data         customer_address         clé ca_address_sk                                    doublons de clé :      0   lignes identiques : 0
+  data         customer_demographics    clé cd_demo_sk                                       doublons de clé :      0   lignes identiques : 0
+  data         date_dim                 clé d_date_sk                                        doublons de clé :      0   lignes identiques : 0
+  data         household_demographics   clé hd_demo_sk                                       doublons de clé :      0   lignes identiques : 0
+  data         income_band              clé ib_income_band_sk                                doublons de clé :      0   lignes identiques : 0
+  data         inventory                clé inv_date_sk, inv_item_sk, inv_warehouse_sk       doublons de clé :      0   lignes identiques : -
+  data         item                     clé i_item_sk                                        doublons de clé :      0   lignes identiques : 0
+  data         item_marketprices        clé imp_sk                                           doublons de clé :      0   lignes identiques : 0
+  data         product_reviews          clé pr_review_sk                                     doublons de clé :      0   lignes identiques : 0
+  data         promotion                clé p_promo_sk                                       doublons de clé :      0   lignes identiques : 0
+  data         reason                   clé r_reason_sk                                      doublons de clé :      0   lignes identiques : 0
+  data         ship_mode                clé sm_ship_mode_sk                                  doublons de clé :      0   lignes identiques : 0
+  data         store                    clé s_store_sk                                       doublons de clé :      0   lignes identiques : 0
+  data         store_returns            clé sr_item_sk, sr_ticket_number                     doublons de clé :    158   lignes identiques : 0
+  data         store_sales              clé ss_item_sk, ss_ticket_number                     doublons de clé :  4 136   lignes identiques : 0
+  data         time_dim                 clé t_time_sk                                        doublons de clé :      0   lignes identiques : 0
+  data         warehouse                clé w_warehouse_sk                                   doublons de clé :      0   lignes identiques : 0
+  data         web_clickstreams         clé (pas de clé)                                     doublons de clé :      -   lignes identiques : 83
+  data         web_page                 clé wp_web_page_sk                                   doublons de clé :      0   lignes identiques : 0
+  data         web_returns              clé wr_item_sk, wr_order_number                      doublons de clé :    150   lignes identiques : 0
+  data         web_sales                clé ws_item_sk, ws_order_number                      doublons de clé :  4 076   lignes identiques : 0
+  data         web_site                 clé web_site_sk                                      doublons de clé :      0   lignes identiques : 0
+  data_refresh customer                 clé c_customer_sk                                    doublons de clé :      0   lignes identiques : 0
+  data_refresh customer_address         clé ca_address_sk                                    doublons de clé :      0   lignes identiques : 0
+  data_refresh inventory                clé inv_date_sk, inv_item_sk, inv_warehouse_sk       doublons de clé :      0   lignes identiques : 0
+  data_refresh item                     clé i_item_sk                                        doublons de clé :      0   lignes identiques : 0
+  data_refresh item_marketprices        clé imp_sk                                           doublons de clé :      0   lignes identiques : 0
+  data_refresh product_reviews          clé pr_review_sk                                     doublons de clé :      0   lignes identiques : 0
+  data_refresh store_returns            clé sr_item_sk, sr_ticket_number                     doublons de clé :      0   lignes identiques : 0
+  data_refresh store_sales              clé ss_item_sk, ss_ticket_number                     doublons de clé :     46   lignes identiques : 0
+  data_refresh web_clickstreams         clé (pas de clé)                                     doublons de clé :      -   lignes identiques : 1
+  data_refresh web_returns              clé wr_item_sk, wr_order_number                      doublons de clé :      1   lignes identiques : 0
+  data_refresh web_sales                clé ws_item_sk, ws_order_number                      doublons de clé :     39   lignes identiques : 0
+
+4. COHÉRENCE DES MONTANTS ET DES DATES (lot data/)
+  ss_lignes                                         667 579
+  ss_ext_sales!=prix*qte                                  0
+  ss_remise!=(liste-vente)*qte                            0
+  ss_net_paid!=ext_sales-coupon                           0
+  ss_net_paid_inc_tax!=net_paid+tax                       0
+  ss_profit!=net_paid-cout                                0
+  ss_qte<=0                                               0
+  ss_prix_vente>prix_liste                                0
+  ss_qte_nulle(vide)                                      0
+  ss_profit<0                                       495 971
+  ws_lignes                                         668 052
+  ws_ext_sales!=prix*qte                                  0
+  ws_remise!=(liste-vente)*qte                            0
+  ws_net_paid!=ext_sales-coupon                           0
+  ws_profit!=net_paid-cout                                0
+  ws_qte<=0                                               0
+  ws_ship_date<sold_date                                  0
+  sr_lignes                                          37 902
+  sr_rattaches_a_une_vente                           37 902
+  wr_lignes                                          38 487
+  wr_rattaches_a_une_vente                           38 487
+  inv_lignes                                     23 255 100
+  inv_qte_vide                                        5 999
+  inv_qte<0                                               0
+  inv_qte=0                                          23 125
+  wcs_lignes                                      6 770 550
+  wcs_avec_sales_sk                                 668 052
+  wcs_user_vide                                   2 853 461
+  wcs_item_vide                                           0
+  wcs_avec_sales_sk_et_user_vide                          0
+  pr_lignes                                          89 991
+  pr_contenu_avec_entite_html                        13 211
+  store_returns_chronologie
+      retours                                      37902
+      cle_vente_ambigue(plusieurs lignes de vente) 470
+      date_retour<date_vente                       0
+      qte_retournee>qte_vendue                     0
+      delai_retour_max_jours                       715
+      delai_retour_moyen_jours                     357.3
+  web_returns_chronologie
+      retours                                      38487
+      cle_vente_ambigue(plusieurs lignes de vente) 439
+      date_retour<date_vente                       0
+      qte_retournee>qte_vendue                     0
+      delai_retour_max_jours                       835
+      delai_retour_moyen_jours                     419.5
+
+5. INTÉGRITÉ RÉFÉRENTIELLE (valeurs sans correspondance dans la table de référence)
+  data.store_sales.ss_sold_date_sk -> date_dim                             nulls          0   orphelins        0
+  data.store_sales.ss_sold_time_sk -> time_dim                             nulls          0   orphelins        0
+  data.store_sales.ss_item_sk -> item                                      nulls          0   orphelins        0
+  data.store_sales.ss_customer_sk -> customer                              nulls          0   orphelins        0
+  data.store_sales.ss_cdemo_sk -> customer_demographics                    nulls        238   orphelins        0
+  data.store_sales.ss_hdemo_sk -> household_demographics                   nulls        295   orphelins        0
+  data.store_sales.ss_addr_sk -> customer_address                          nulls        448   orphelins        0
+  data.store_sales.ss_store_sk -> store                                    nulls          0   orphelins        0
+  data.store_sales.ss_promo_sk -> promotion                                nulls        158   orphelins        0
+  data.web_sales.ws_sold_date_sk -> date_dim                               nulls          0   orphelins        0
+  data.web_sales.ws_sold_time_sk -> time_dim                               nulls          0   orphelins        0
+  data.web_sales.ws_ship_date_sk -> date_dim                               nulls          0   orphelins        0
+  data.web_sales.ws_item_sk -> item                                        nulls          0   orphelins        0
+  data.web_sales.ws_bill_customer_sk -> customer                           nulls          0   orphelins        0
+  data.web_sales.ws_ship_customer_sk -> customer                           nulls          0   orphelins        0
+  data.web_sales.ws_web_page_sk -> web_page                                nulls        164   orphelins        0
+  data.web_sales.ws_web_site_sk -> web_site                                nulls        154   orphelins        0
+  data.web_sales.ws_ship_mode_sk -> ship_mode                              nulls        170   orphelins        0
+  data.web_sales.ws_warehouse_sk -> warehouse                              nulls        158   orphelins        0
+  data.web_sales.ws_promo_sk -> promotion                                  nulls        121   orphelins        0
+  data.store_returns.sr_returned_date_sk -> date_dim                       nulls          0   orphelins        0
+  data.store_returns.sr_return_time_sk -> time_dim                         nulls          0   orphelins        0
+  data.store_returns.sr_item_sk -> item                                    nulls          0   orphelins        0
+  data.store_returns.sr_customer_sk -> customer                            nulls          0   orphelins        0
+  data.store_returns.sr_store_sk -> store                                  nulls          0   orphelins        0
+  data.store_returns.sr_reason_sk -> reason                                nulls         11   orphelins        0
+  data.web_returns.wr_returned_date_sk -> date_dim                         nulls          0   orphelins        0
+  data.web_returns.wr_item_sk -> item                                      nulls          0   orphelins        0
+  data.web_returns.wr_refunded_customer_sk -> customer                     nulls          0   orphelins        0
+  data.web_returns.wr_returning_customer_sk -> customer                    nulls          0   orphelins        0
+  data.web_returns.wr_web_page_sk -> web_page                              nulls         10   orphelins        0
+  data.web_returns.wr_reason_sk -> reason                                  nulls          7   orphelins        0
+  data.inventory.inv_date_sk -> date_dim                                   nulls          0   orphelins        0
+  data.inventory.inv_item_sk -> item                                       nulls          0   orphelins  232 380
+  data.inventory.inv_warehouse_sk -> warehouse                             nulls          0   orphelins        0
+  data.web_clickstreams.wcs_click_date_sk -> date_dim                      nulls          0   orphelins        0
+  data.web_clickstreams.wcs_click_time_sk -> time_dim                      nulls          0   orphelins        0
+  data.web_clickstreams.wcs_item_sk -> item                                nulls          0   orphelins        0
+  data.web_clickstreams.wcs_web_page_sk -> web_page                        nulls        164   orphelins        0
+  data.web_clickstreams.wcs_user_sk -> customer                            nulls  2 853 461   orphelins        0
+  data.product_reviews.pr_item_sk -> item                                  nulls          0   orphelins        0
+  data.product_reviews.pr_user_sk -> customer                              nulls          0   orphelins        0
+  data.item_marketprices.imp_item_sk -> item                               nulls          0   orphelins        0
+  data.item_marketprices.imp_start_date -> date_dim                        nulls          0   orphelins        0
+  data.item_marketprices.imp_end_date -> date_dim                          nulls         30   orphelins        0
+  data.customer.c_current_cdemo_sk -> customer_demographics                nulls         18   orphelins        0
+  data.customer.c_current_hdemo_sk -> household_demographics               nulls         29   orphelins        0
+  data.customer.c_current_addr_sk -> customer_address                      nulls         22   orphelins        0
+  data.customer.c_first_sales_date_sk -> date_dim                          nulls         18   orphelins        0
+  data.customer.c_first_shipto_date_sk -> date_dim                         nulls         25   orphelins        0
+  data.household_demographics.hd_income_band_sk -> income_band             nulls          2   orphelins        0
+  data.promotion.p_item_sk -> item                                         nulls          0   orphelins        0
+  data.promotion.p_start_date_sk -> date_dim                               nulls          0   orphelins        0
+  data.promotion.p_end_date_sk -> date_dim                                 nulls          0   orphelins        0
+  data.store.s_closed_date_sk -> date_dim                                  nulls          0   orphelins        0
+  data.web_page.wp_creation_date_sk -> date_dim                            nulls          0   orphelins        0
+  data.web_page.wp_access_date_sk -> date_dim                              nulls          0   orphelins        0
+  data.web_page.wp_customer_sk -> customer                                 nulls          0   orphelins        0
+  data_refresh.store_sales.ss_sold_date_sk -> date_dim                     nulls          0   orphelins        0
+  data_refresh.store_sales.ss_sold_time_sk -> time_dim                     nulls          0   orphelins        0
+  data_refresh.store_sales.ss_item_sk -> item                              nulls          0   orphelins        0
+  data_refresh.store_sales.ss_customer_sk -> customer                      nulls          0   orphelins        0
+  data_refresh.store_sales.ss_cdemo_sk -> customer_demographics            nulls         12   orphelins        0
+  data_refresh.store_sales.ss_hdemo_sk -> household_demographics           nulls         13   orphelins        0
+  data_refresh.store_sales.ss_addr_sk -> customer_address                  nulls         14   orphelins        0
+  data_refresh.store_sales.ss_store_sk -> store                            nulls          0   orphelins        0
+  data_refresh.store_sales.ss_promo_sk -> promotion                        nulls          1   orphelins        0
+  data_refresh.web_sales.ws_sold_date_sk -> date_dim                       nulls          0   orphelins        0
+  data_refresh.web_sales.ws_sold_time_sk -> time_dim                       nulls          0   orphelins        0
+  data_refresh.web_sales.ws_ship_date_sk -> date_dim                       nulls          0   orphelins        0
+  data_refresh.web_sales.ws_item_sk -> item                                nulls          0   orphelins        0
+  data_refresh.web_sales.ws_bill_customer_sk -> customer                   nulls          0   orphelins        0
+  data_refresh.web_sales.ws_ship_customer_sk -> customer                   nulls          0   orphelins        0
+  data_refresh.web_sales.ws_web_page_sk -> web_page                        nulls          2   orphelins        0
+  data_refresh.web_sales.ws_web_site_sk -> web_site                        nulls          3   orphelins        0
+  data_refresh.web_sales.ws_ship_mode_sk -> ship_mode                      nulls          1   orphelins        0
+  data_refresh.web_sales.ws_warehouse_sk -> warehouse                      nulls          2   orphelins        0
+  data_refresh.web_sales.ws_promo_sk -> promotion                          nulls          2   orphelins        0
+  data_refresh.store_returns.sr_returned_date_sk -> date_dim               nulls          0   orphelins        0
+  data_refresh.store_returns.sr_return_time_sk -> time_dim                 nulls          0   orphelins        0
+  data_refresh.store_returns.sr_item_sk -> item                            nulls          0   orphelins        0
+  data_refresh.store_returns.sr_customer_sk -> customer                    nulls          0   orphelins        0
+  data_refresh.store_returns.sr_store_sk -> store                          nulls          0   orphelins        0
+  data_refresh.store_returns.sr_reason_sk -> reason                        nulls          0   orphelins        0
+  data_refresh.web_returns.wr_returned_date_sk -> date_dim                 nulls          0   orphelins        0
+  data_refresh.web_returns.wr_item_sk -> item                              nulls          0   orphelins        0
+  data_refresh.web_returns.wr_refunded_customer_sk -> customer             nulls          0   orphelins        0
+  data_refresh.web_returns.wr_returning_customer_sk -> customer            nulls          0   orphelins        0
+  data_refresh.web_returns.wr_web_page_sk -> web_page                      nulls          0   orphelins        0
+  data_refresh.web_returns.wr_reason_sk -> reason                          nulls          0   orphelins        0
+  data_refresh.inventory.inv_date_sk -> date_dim                           nulls          0   orphelins        0
+  data_refresh.inventory.inv_item_sk -> item                               nulls          0   orphelins        0
+  data_refresh.inventory.inv_warehouse_sk -> warehouse                     nulls          0   orphelins        0
+  data_refresh.web_clickstreams.wcs_click_date_sk -> date_dim              nulls          0   orphelins        0
+  data_refresh.web_clickstreams.wcs_click_time_sk -> time_dim              nulls          0   orphelins        0
+  data_refresh.web_clickstreams.wcs_item_sk -> item                        nulls          0   orphelins        0
+  data_refresh.web_clickstreams.wcs_web_page_sk -> web_page                nulls          2   orphelins        0
+  data_refresh.web_clickstreams.wcs_user_sk -> customer                    nulls     29 167   orphelins        0
+  data_refresh.product_reviews.pr_item_sk -> item                          nulls          0   orphelins        0
+  data_refresh.product_reviews.pr_user_sk -> customer                      nulls          0   orphelins        0
+  data_refresh.item_marketprices.imp_item_sk -> item                       nulls          0   orphelins        0
+  data_refresh.item_marketprices.imp_start_date -> date_dim                nulls          0   orphelins        0
+  data_refresh.item_marketprices.imp_end_date -> date_dim                  nulls          0   orphelins        0
+  data_refresh.customer.c_current_cdemo_sk -> customer_demographics        nulls          0   orphelins        0
+  data_refresh.customer.c_current_hdemo_sk -> household_demographics       nulls          0   orphelins        0
+  data_refresh.customer.c_current_addr_sk -> customer_address              nulls          0   orphelins        0
+  data_refresh.customer.c_first_sales_date_sk -> date_dim                  nulls          0   orphelins        0
+  data_refresh.customer.c_first_shipto_date_sk -> date_dim                 nulls          0   orphelins        0
+
+6. RATTACHEMENTS PAR CLÉ COMPOSITE
+  web_clickstreams_vs_ventes
+      clics_avec_wcs_sales_sk                                                    668 052
+      (wcs_item_sk,wcs_sales_sk) dans web_sales (ws_item_sk,ws_order_number)     668 052
+      (wcs_item_sk,wcs_sales_sk) dans store_sales (ss_item_sk,ss_ticket_number)  6 900
+      clics_avec_sales_sk_et_user                                                668 052
+      wcs_user_sk = ws_bill_customer_sk de la commande                           668 052
+      wcs_user_sk = ss_customer_sk du ticket                                     171
+  product_reviews_vs_ventes
+      avis                                                                       89 991
+      (pr_item_sk,pr_order_sk) dans web_sales                                    89 991
+      (pr_item_sk,pr_order_sk) dans store_sales                                  931
+      pr_user_sk = ws_bill_customer_sk de la commande                            83 488
+      pr_user_sk = ss_customer_sk du ticket                                      19
+  inventory_orphelins_vs_refresh
+      orphelins                                                                  232 380
+      dont_couverts_par_data_refresh_item                                        232 380
+  data_refresh_rattachement_aux_ventes
+      store_returns                                                              426
+      store_returns_dans_data                                                    19
+      store_returns_dans_refresh                                                 0
+      web_returns                                                                400
+      web_returns_dans_data                                                      26
+      web_returns_dans_refresh                                                   3
+      clics_avec_vente                                                           6 879
+      clics_avec_vente_dans_ws_refresh                                           6 879
+      avis                                                                       909
+      avis_dans_ws_data                                                          42
+      avis_dans_ws_refresh                                                       9
+
+7. CARDINALITÉS
+  store_sales_tickets_distincts                                         89100
+  store_sales_lignes_par_ticket_moy                                     7.49
+  store_sales_lignes_par_ticket_max                                     14
+  store_sales_tickets_avec_date_magasin_client_uniques                  89100
+  store_sales_tickets_incoherents(plusieurs date/magasin/client)        0
+  store_sales_cle_(item,ticket)_distinctes                              663443
+  web_sales_commandes_distinctes                                        89100
+  web_sales_lignes_par_commande_moy                                     7.5
+  web_sales_lignes_par_commande_max                                     14
+  web_sales_commandes_avec_date_client_uniques                          89100
+  web_sales_cle_(item,order)_distinctes                                 663976
+  web_clickstreams_wcs_sales_sk_distincts                               89100
+  web_clickstreams_wcs_sales_sk_presents_dans_ws_order_number           89100
+  web_clickstreams_wcs_sales_sk_presents_dans_ss_ticket_number          89100
+  product_reviews_pr_order_sk_distincts                                 89098
+  product_reviews_pr_order_sk_presents_dans_ws_order_number             89098
+  product_reviews_pr_order_sk_presents_dans_ss_ticket_number            89098

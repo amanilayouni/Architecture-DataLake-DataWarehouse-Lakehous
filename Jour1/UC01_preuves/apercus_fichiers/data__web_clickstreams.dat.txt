@@ -1,0 +1,7 @@
+# 178722140 octets, 6770550 lignes
+# colonnes (schéma TPCx-BB) : wcs_click_date_sk|wcs_click_time_sk|wcs_sales_sk|wcs_item_sk|wcs_web_page_sk|wcs_user_sk
+36890|71470||4867|28|
+36890|27089||15465|47|
+36890|16847||3387|31|
+36890|46031||15214|28|
+36890|8436||10556|37|

@@ -1,0 +1,7 @@
+# 424943678 octets, 23255100 lignes
+# colonnes (schéma TPCx-BB) : inv_date_sk|inv_item_sk|inv_warehouse_sk|inv_quantity_on_hand
+36890|0|0|503
+36890|1|0|624
+36890|2|0|796
+36890|3|0|229
+36890|4|0|699

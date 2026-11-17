@@ -1,0 +1,7 @@
+# 46396 octets, 300 lignes
+# colonnes (schéma TPCx-BB) : p_promo_sk|p_promo_id|p_start_date_sk|p_end_date_sk|p_item_sk|p_cost|p_response_target|p_promo_name|p_channel_dmail|p_channel_email|p_channel_catalog|p_channel_tv|p_channel_radio|p_channel_press|p_channel_event|p_channel_demo|p_channel_details|p_purpose|p_discount_active
+0|AAAAAAAAAAAAAAAA|61336|94523|14434|445.17|1|pri|Y|N|N|N|N|N|N|N|always bold warthogs despite the dugouts will play closely|Unknown|N
+1|AAAAAAAAAAAAAAAB|28694|61972|2219|926.61|1|cally|Y|N|N|Y|N|N|N|N|sentiments haggle courts; silent warhorses should poach of the dogged pinto beans. ironic|Unknown|N
+2|AAAAAAAAAAAAAAAC|66772|109558|558|220.37|1|eing|N|N|N|N|N|N|N|N|finally furious Tiresias' past the doggedly slow Tiresias' try to play up the |Unknown|N
+3|AAAAAAAAAAAAAAAD|94260|105798|14749|920.79|1|ought|N|N|Y|N|N|N|N|N|idle pinto beans need to are sheaves? enticingly quiet w|Unknown|N
+4|AAAAAAAAAAAAAAAE|65901|99229|16317|818.87|1|eing|N|N|N|N|N|N|N|N|stealthily enticing dependencies must thrash doggedly asymptotes! d|Unknown|N

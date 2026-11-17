@@ -1,0 +1,7 @@
+# 327 octets, 20 lignes
+# colonnes (schéma TPCx-BB) : ib_income_band_sk|ib_lower_bound|ib_upper_bound
+0|1|10000
+1|10001|20000
+2|20001|30000
+3|30001|40000
+4|40001|50000

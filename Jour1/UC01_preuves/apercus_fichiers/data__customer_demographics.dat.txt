@@ -1,0 +1,7 @@
+# 77753083 octets, 1920800 lignes
+# colonnes (schéma TPCx-BB) : cd_demo_sk|cd_gender|cd_marital_status|cd_education_status|cd_purchase_estimate|cd_credit_rating|cd_dep_count|cd_dep_employed_count|cd_dep_college_count
+0|F|U|Primary|6000|Good|0|5|0
+1|M|S|Primary|3500|Good|0|0|4
+2|M|W|Unknown|500|Good|0|0|3
+3|F|W|2 yr Degree|3500|Low Risk|7|7|0
+4|F|M|4 yr Degree|1000|Low Risk|1|6|0

@@ -1,0 +1,6 @@
+# 273 octets, 5 lignes
+
+maxItems,realMaxItems,numCompetitors,minComPerITem,maxComPerItem,avgComPerItem,itemsWithoutCompetitors,itemsNotHavingMinCompetitors
+18000,17819,89099,2,13,5.000224479488187,0,0
+List of item ID's with competitor count = 0:
+List of item ID's with competitor count < 2:

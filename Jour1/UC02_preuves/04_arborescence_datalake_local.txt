@@ -1,0 +1,49 @@
+datalake_local/
+    _meta/
+        journal_ingestion.csv                                       1 619 octets
+    bronze/
+        tpcxbb/
+            date_dim/
+                kit=data/
+                    ingest_date=2026-11-17/
+                        date_dim.dat                                           15 395 800 octets
+            item/
+                kit=data/
+                    ingest_date=2026-11-17/
+                        item.dat                                                6 799 286 octets
+                kit=data_refresh/
+                    ingest_date=2026-11-17/
+                        item.dat                                                   69 173 octets
+            store/
+                kit=data/
+                    ingest_date=2026-11-17/
+                        store.dat                                                   3 386 octets
+            store_sales/
+                kit=data/
+                    ingest_date=2026-11-17/
+                        store_sales.dat                                        92 764 700 octets
+                kit=data_refresh/
+                    ingest_date=2026-11-17/
+                        store_sales.dat                                           922 171 octets
+    gold/
+        kpi_mensuel_magasin/
+            kpi_mensuel_magasin.csv                                    56 557 octets
+            kpi_mensuel_magasin.parquet                                32 045 octets
+    silver/
+        date_dim/
+            date_dim.parquet                                        1 347 211 octets
+        item/
+            item.parquet                                            3 856 812 octets
+        store/
+            store.parquet                                              11 760 octets
+        store_sales/
+            annee=2001/
+                0d7ec08ecb06451ebb9494bf011abb9a-0.parquet             11 486 944 octets
+            annee=2002/
+                0d7ec08ecb06451ebb9494bf011abb9a-0.parquet             11 572 339 octets
+            annee=2003/
+                0d7ec08ecb06451ebb9494bf011abb9a-0.parquet             11 458 879 octets
+            annee=2004/
+                0d7ec08ecb06451ebb9494bf011abb9a-0.parquet             11 892 770 octets
+            annee=2005/
+                0d7ec08ecb06451ebb9494bf011abb9a-0.parquet             11 503 413 octets

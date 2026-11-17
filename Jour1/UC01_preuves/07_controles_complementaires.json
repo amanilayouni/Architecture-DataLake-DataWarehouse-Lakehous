@@ -1,0 +1,140 @@
+{
+ "web_clickstreams_vs_ventes": {
+  "clics_avec_wcs_sales_sk": 668052,
+  "(wcs_item_sk,wcs_sales_sk) dans web_sales (ws_item_sk,ws_order_number)": 668052,
+  "(wcs_item_sk,wcs_sales_sk) dans store_sales (ss_item_sk,ss_ticket_number)": 6900,
+  "clics_avec_sales_sk_et_user": 668052,
+  "wcs_user_sk = ws_bill_customer_sk de la commande": 668052,
+  "wcs_user_sk = ss_customer_sk du ticket": 171
+ },
+ "product_reviews_vs_ventes": {
+  "avis": 89991,
+  "(pr_item_sk,pr_order_sk) dans web_sales": 89991,
+  "(pr_item_sk,pr_order_sk) dans store_sales": 931,
+  "pr_user_sk = ws_bill_customer_sk de la commande": 83488,
+  "pr_user_sk = ss_customer_sk du ticket": 19
+ },
+ "store_returns_chronologie": {
+  "retours": 37902,
+  "cle_vente_ambigue(plusieurs lignes de vente)": 470,
+  "date_retour<date_vente": 0,
+  "qte_retournee>qte_vendue": 0,
+  "delai_retour_max_jours": 715,
+  "delai_retour_moyen_jours": 357.3
+ },
+ "web_returns_chronologie": {
+  "retours": 38487,
+  "cle_vente_ambigue(plusieurs lignes de vente)": 439,
+  "date_retour<date_vente": 0,
+  "qte_retournee>qte_vendue": 0,
+  "delai_retour_max_jours": 835,
+  "delai_retour_moyen_jours": 419.5
+ },
+ "inventory_orphelins_vs_refresh": {
+  "orphelins": 232380,
+  "dont_couverts_par_data_refresh_item": 232380
+ },
+ "hd_vehicle_count_negatif": 282,
+ "store_ferme_avant_premiere_vente": [
+  {
+   "s_store_sk": "1",
+   "s_store_name": "Hillside",
+   "date_fermeture": "1952-01-03",
+   "premiere_vente": "2001-01-01"
+  },
+  {
+   "s_store_sk": "2",
+   "s_store_name": "Sherwood",
+   "date_fermeture": "1924-05-15",
+   "premiere_vente": "2001-01-01"
+  },
+  {
+   "s_store_sk": "6",
+   "s_store_name": "Bloomfield",
+   "date_fermeture": "1943-02-26",
+   "premiere_vente": "2001-01-01"
+  },
+  {
+   "s_store_sk": "9",
+   "s_store_name": "Germantown",
+   "date_fermeture": "1968-10-22",
+   "premiere_vente": "2001-01-01"
+  },
+  {
+   "s_store_sk": "10",
+   "s_store_name": "Avalon",
+   "date_fermeture": "1917-01-27",
+   "premiere_vente": "2001-01-01"
+  }
+ ],
+ "periode_store_sales": {
+  "data": [
+   "2001-01-01",
+   "2005-12-13"
+  ],
+  "data_refresh": [
+   "2005-12-13",
+   "2005-12-31"
+  ],
+  "jours_communs": [
+   "2005-12-13"
+  ]
+ },
+ "periode_web_sales": {
+  "data": [
+   "2001-01-01",
+   "2005-12-13"
+  ],
+  "data_refresh": [
+   "2005-12-13",
+   "2005-12-31"
+  ],
+  "jours_communs": [
+   "2005-12-13"
+  ]
+ },
+ "periode_web_clickstreams": {
+  "data": [
+   "2001-01-01",
+   "2005-12-13"
+  ],
+  "data_refresh": [
+   "2005-12-13",
+   "2005-12-31"
+  ],
+  "jours_communs": [
+   "2005-12-13"
+  ]
+ },
+ "data_refresh_rattachement_aux_ventes": {
+  "store_returns": 426,
+  "store_returns_dans_data": 19,
+  "store_returns_dans_refresh": 0,
+  "web_returns": 400,
+  "web_returns_dans_data": 26,
+  "web_returns_dans_refresh": 3,
+  "clics_avec_vente": 6879,
+  "clics_avec_vente_dans_ws_refresh": 6879,
+  "avis": 909,
+  "avis_dans_ws_data": 42,
+  "avis_dans_ws_refresh": 9
+ },
+ "kpi_stock": {
+  "releve_2001-01-01": {
+   "lignes": 90000,
+   "qte_totale": 45027272,
+   "qte_zero": 81,
+   "qte_vide": 22
+  },
+  "releve_2005-12-12": {
+   "lignes": 35100,
+   "qte_totale": 17446138,
+   "qte_zero": 47,
+   "qte_vide": 9
+  }
+ },
+ "kpi_avis": {
+  "nb_avis": 89991,
+  "note_moyenne": 4.24
+ }
+}

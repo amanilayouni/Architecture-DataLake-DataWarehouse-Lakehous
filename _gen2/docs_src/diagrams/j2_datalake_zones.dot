@@ -1,0 +1,22 @@
+digraph Z {
+  rankdir=TB; nodesep=0.3; ranksep=0.45; newrank=true;
+  node [fontname="Arial", fontsize=9, shape=box, style="rounded,filled", fillcolor="#ffffff"];
+  edge [color="#373737", arrowsize=0.6, fontname="Arial", fontsize=8];
+  labelloc=t; fontname="Arial"; fontsize=13;
+  label="Arborescence du Data Lake dans HDFS : /retail-lake";
+
+  root [label="/retail-lake", fillcolor="#d8d8d8"];
+  raw [label="raw/\nDonnees sources deposees telles quelles\n(hdfs dfs -put et flux NiFi)\nimmutable, provenance conservee", fillcolor="#efefef"];
+  raw_init [label="raw/tpcxbb/initial/\nlot data/ du kit"];
+  raw_ref [label="raw/tpcxbb/refresh/\nlot data_refresh/ du kit"];
+  raw_nifi [label="raw/nifi/\ndepots realises par le flux NiFi"];
+  bronze [label="bronze/\nCopie controlee des fichiers recus\n(empreinte, structure) avant preparation", fillcolor="#efefef"];
+  silver [label="silver/\nDonnees nettoyees, typees, dedoublonnees\n(Parquet - Jour 3)", fillcolor="#f2f2f2"];
+  gold [label="gold/\nTables pour les KPI, modele en etoile\n(Jour 3)", fillcolor="#f2f2f2"];
+  quality [label="quality/\nResultats des controles qualite\net fichiers rejetes", fillcolor="#f2f2f2"];
+  logs [label="logs/\nJournaux d'ingestion et de traitement", fillcolor="#f2f2f2"];
+
+  root -> raw; root -> bronze; root -> silver; root -> gold; root -> quality; root -> logs;
+  raw -> raw_init; raw -> raw_ref; raw -> raw_nifi;
+  {rank=same; raw; bronze; silver; gold; quality; logs}
+}

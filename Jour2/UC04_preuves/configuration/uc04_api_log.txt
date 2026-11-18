@@ -1,0 +1,26 @@
+fichier copie dans input : 3386 octets
+root process group: ef49f569-01a1-1000-5059-6996b38ff816
+GetFile cree: ef51ad5b-01a1-1000-2c29-24827ce087aa
+GetFile configure, etat: INVALID
+PutHDFS cree: ef65d6ad-01a1-1000-84db-5e02d586a5ec
+PutHDFS validation: INVALID
+  - 'Relationship failure' is invalid because Relationship 'failure' is not connected to any component and is not auto-terminated
+  - 'Upstream Connections' is invalid because Processor requires an upstream connection but currently has none
+connexion success creee: ef65ff28-01a1-1000-9779-80eea83952db
+PutHDFS -> STOPPED
+GetFile -> RUNNING
+LogAttribute cree: ef66dcf8-01a1-1000-cad7-c73ce99dbc21
+LogAttribute validation: INVALID
+connexion failure -> LogAttribute: ef66dffc-01a1-1000-0392-57d2aa07ad7d
+PutHDFS validation: VALID | erreurs: None
+PutHDFS -> RUNNING
+LogAttribute validation: VALID | erreurs: None
+LogAttribute -> RUNNING
+PROC PutHDFS_retail_lake | state: RUNNING | in: 0 (0 bytes) | out: 0 (0 bytes) | tasks: 0
+PROC LogAttribute_echecs | state: RUNNING | in: 0 (0 bytes) | out: 0 (0 bytes) | tasks: 0
+PROC GetFile_depot_local | state: RUNNING | in: 0 (0 bytes) | out: 1 (3.31 KB) | tasks: 7132582
+CONN | queued: 1 (3.31 KB) | in: 1 (3.31 KB) | out: 0 (0 bytes)
+CONN | queued: 0 (0 bytes) | in: 0 (0 bytes) | out: 0 (0 bytes)
+evenements provenance: 1
+  RECEIVE | 11/18/2026 17:03:22.444 WAT | None | 
+ids: {"conn_success": "ef65ff28-01a1-1000-9779-80eea83952db", "getfile": "ef51ad5b-01a1-1000-2c29-24827ce087aa", "pg": "ef49f569-01a1-1000-5059-6996b38ff816", "logattr": "ef66dcf8-01a1-1000-cad7-c73ce99dbc21", "puthdfs": "ef65d6ad-01a1-1000-84db-5e02d586a5ec", "conn_failure": "ef66dffc-01a1-1000-0392-57d2aa07ad7d"}

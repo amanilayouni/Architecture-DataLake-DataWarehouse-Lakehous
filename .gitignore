@@ -1,0 +1,18 @@
+# Donnees sources (kit TPCx-BB ~1 Go, ne pas versionner)
+*.dat
+retail_project/
+datalake_local/
+data_nifi/
+
+# Secrets et acces VM (jamais dans le depot)
+nifi_token.txt
+_gen2/vm/
+*.pem
+*.key
+
+# Fichiers temporaires de generation
+_gen2/html/
+_gen2/*.json
+__pycache__/
+*.pyc
+*.tmp

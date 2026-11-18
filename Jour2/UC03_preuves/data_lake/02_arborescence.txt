@@ -1,0 +1,34 @@
+== 2. Creation de l'arborescence ==
+### hdfs dfs -mkdir -p /retail-lake/raw/tpcxbb/initial
+2026-11-18 16:19:39,502 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/raw/tpcxbb/refresh
+2026-11-18 16:19:42,387 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/raw/nifi
+2026-11-18 16:19:45,488 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/bronze/tpcxbb
+2026-11-18 16:19:49,182 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/silver
+2026-11-18 16:19:52,486 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/gold
+2026-11-18 16:19:56,451 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/quality
+2026-11-18 16:20:00,966 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -mkdir -p /retail-lake/logs
+2026-11-18 16:20:05,000 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -ls /
+2026-11-18 16:20:10,156 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:20 /retail-lake
+### hdfs dfs -ls -R /retail-lake
+2026-11-18 16:20:15,593 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/bronze
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/bronze/tpcxbb
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/gold
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:20 /retail-lake/logs
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:20 /retail-lake/quality
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw/nifi
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw/tpcxbb
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw/tpcxbb/initial
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw/tpcxbb/refresh
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/silver

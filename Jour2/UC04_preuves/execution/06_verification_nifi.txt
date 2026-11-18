@@ -1,0 +1,24 @@
+### hdfs dfs -ls /retail-lake/raw/nifi/ (pas de doublon)
+2026-11-18 17:20:59,479 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+-rw-r--r--   1 amani supergroup      3.3 K 2026-11-18 17:04 /retail-lake/raw/nifi/store.dat
+### hdfs dfs -ls -R /retail-lake (arborescence finale)
+2026-11-18 17:21:10,722 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/bronze
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/bronze/tpcxbb
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/gold
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:20 /retail-lake/logs
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:20 /retail-lake/quality
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw
+drwxr-xr-x   - amani supergroup          0 2026-11-18 17:04 /retail-lake/raw/nifi
+-rw-r--r--   1 amani supergroup       3386 2026-11-18 17:04 /retail-lake/raw/nifi/store.dat
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw/tpcxbb
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial
+-rw-r--r--   1 amani supergroup   15395800 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial/date_dim.dat
+-rw-r--r--   1 amani supergroup    6799286 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial/item.dat
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/raw/tpcxbb/refresh
+drwxr-xr-x   - amani supergroup          0 2026-11-18 16:19 /retail-lake/silver
+### integrite du fichier depose par NiFi
+2026-11-18 17:21:17,181 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  /tmp/store_nifi.dat
+a936bc38692bdddc222cf86d08ed9d0feb761af26769212d789cf6729d1808ef  /home/amani/retail_project/data/store/store.dat

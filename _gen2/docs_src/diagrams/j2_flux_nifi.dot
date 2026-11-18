@@ -1,0 +1,18 @@
+digraph F {
+  rankdir=LR; nodesep=0.4; ranksep=0.6; newrank=true;
+  node [fontname="Arial", fontsize=10, shape=box, style="rounded,filled", fillcolor="#ffffff"];
+  edge [color="#373737", arrowsize=0.7, fontname="Arial", fontsize=9];
+  labelloc=t; fontname="Arial"; fontsize=13;
+  label="Flux d'ingestion NiFi : GetFile -> PutHDFS (chemin d'erreur vers LogAttribute)";
+
+  input [label="/home/amani/data_nifi/input/\n(copie de travail de store.dat)", shape=folder, fillcolor="#efefef"];
+  get [label="GetFile_depot_local\nInput Directory : /home/amani/data_nifi/input\nKeep Source File : false\nRecurse Subdirectories : false", fillcolor="#e8e8e8"];
+  put [label="PutHDFS_retail_lake\nHadoop Configuration Resources :\ncore-site.xml + hdfs-site.xml\nDirectory : /retail-lake/raw/nifi\nConflict Resolution Strategy : fail", fillcolor="#e8e8e8"];
+  hdfs [label="HDFS\n/retail-lake/raw/nifi/store.dat", shape=folder, fillcolor="#efefef"];
+  err [label="LogAttribute_echecs\n(journalise les attributs du FlowFile\nrefuse dans nifi-app.log)", fillcolor="#e8e8e8"];
+
+  input -> get [style=dashed, label="fichier local"];
+  get -> put [label="success"];
+  put -> hdfs [label="success"];
+  put -> err [label="failure"];
+}

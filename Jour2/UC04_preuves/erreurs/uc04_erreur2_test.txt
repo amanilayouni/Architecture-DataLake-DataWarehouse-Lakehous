@@ -1,0 +1,14 @@
+meme fichier repose dans input (le nom existe deja dans HDFS)
+PROC PutHDFS_retail_lake | in: 1 (3.31 KB) | out: 1 (3.31 KB) | tasks: 1
+PROC LogAttribute_echecs | in: 1 (3.31 KB) | out: 0 (0 bytes) | tasks: 1
+PROC GetFile_depot_local | in: 0 (0 bytes) | out: 1 (3.31 KB) | tasks: 34616234
+CONN ['success'] | queued: 0 (0 bytes) | in: 1 (3.31 KB) | out: 1 (3.31 KB)
+CONN ['failure'] | queued: 0 (0 bytes) | in: 1 (3.31 KB) | out: 1 (3.31 KB)
+BULLETIN: PutHDFS[id=ef65d6ad-01a1-1000-84db-5e02d586a5ec] penalizing FlowFile[filename=store.dat] and routing to failure because file with same name already exists
+evenements: 6
+  DROP | 11/18/2026 17:10:56.411 WAT | Auto-Terminated by success Relationship
+  RECEIVE | 11/18/2026 17:10:22.721 WAT | 
+  DROP | 11/18/2026 17:04:51.526 WAT | Auto-Terminated by success Relationship
+  ATTRIBUTES_MODIFIED | 11/18/2026 17:04:51.714 WAT | 
+  SEND | 11/18/2026 17:04:51.457 WAT | 
+  RECEIVE | 11/18/2026 17:03:22.444 WAT | 

@@ -1,0 +1,10 @@
+== 4. Depot manuel dans HDFS ==
+### hdfs dfs -put /home/amani/retail_project/data/item/item.dat /retail-lake/raw/tpcxbb/initial/
+2026-11-18 16:20:19,531 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -put /home/amani/retail_project/data/date_dim/date_dim.dat /retail-lake/raw/tpcxbb/initial/
+2026-11-18 16:20:31,411 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+### hdfs dfs -ls -h /retail-lake/raw/tpcxbb/initial/
+2026-11-18 16:20:40,209 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 2 items
+-rw-r--r--   1 amani supergroup     14.7 M 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial/date_dim.dat
+-rw-r--r--   1 amani supergroup      6.5 M 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial/item.dat

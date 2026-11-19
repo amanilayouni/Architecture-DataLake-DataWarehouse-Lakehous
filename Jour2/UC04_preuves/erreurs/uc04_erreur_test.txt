@@ -1,5 +1,0 @@
-chemin casse en : /home/amani/data_nifi/input_inexistant
-GetFile relance avec chemin faux -> STOPPED
-pas de bulletin
-(voir aussi nifi-app.log)
-chemin retabli, GetFile -> RUNNING

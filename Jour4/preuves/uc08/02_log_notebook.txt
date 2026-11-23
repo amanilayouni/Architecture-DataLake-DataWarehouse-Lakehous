@@ -1,0 +1,28 @@
+[NbConvertApp] Converting notebook notebooks/analyses_kpi.ipynb to notebook
+/home/amani/miniconda3/envs/j3/lib/python3.10/site-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.
+  _validate(nbdict, ref, version, version_minor, relax_add_props)
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+26/11/21 19:10:26 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/11/21 19:10:26 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/21 19:10:28 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+[NbConvertApp] Writing 232860 bytes to notebooks/analyses_kpi.ipynb

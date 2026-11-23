@@ -1,0 +1,113 @@
+26/11/21 19:07:55 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/11/21 19:07:55 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/21 19:07:57 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+=== UC-08 : analyses sur les jeux Silver / Gold du Jour 3 ===
+lecture silver : /home/amani/j3_data/silver
+lecture gold   : /home/amani/j3_data/gold/ventes_mensuelles_magasin
+
+## jeux selectionnes
+silver/store_sales                   667579 lignes, 23 colonnes
+silver/item                           17820 lignes, 22 colonnes
+silver/store                             12 lignes, 29 colonnes
+silver/date_dim                      109573 lignes, 28 colonnes
+gold/ventes_mensuelles_magasin          720 lignes, 8 colonnes
+
+## KPI calcules (dictionnaire UC-01)
+K01  Chiffre d'affaires net magasin      = 1150529586.37 $
+K03  Nombre de transactions              = 89100 tickets
+K04  Panier moyen                        = 12912.79 $/transaction
+K05  Quantites vendues                   = 33755474 unites
+K07  Taux de remise                      = 49.99 %
+K08  Marge nette                         = -552553374.82 $
+K08b Taux de marge                       = -48.03 %
+
+## verification : CA net par annee vs dictionnaire UC-01
++------+--------------+------------+
+|d_year|        ca_net|transactions|
++------+--------------+------------+
+|  2001|2.3249865983E8|       17991|
+|  2002|2.3094726582E8|       17990|
+|  2003|2.3357518563E8|       17990|
+|  2004|2.3434493429E8|       18039|
+|  2005| 2.191635408E8|       17090|
++------+--------------+------------+
+
+## statistiques descriptives - silver/store_sales
+nb_lignes              667579
+net_paid_min           0.0
+net_paid_max           18745.0
+net_paid_moyenne       1723.44
+net_paid_mediane       878.6
+quantite_min           1
+quantite_max           100
+quantite_moyenne       50.56
+articles_distincts     17820
+magasins_distincts     12
+clients_distincts      37336
+periode couverte : 2001-01-01 -> 2005-12-13
+
+## analyse 1 : evolution du CA net par mois (jeu Gold)
+ d_year  d_moy      ca_net  quantites    mois
+   2001      1 19279633.40     574902 2001-01
+   2001      2 17989228.47     529739 2001-02
+   2001      3 19630651.08     569439 2001-03
+   2001      4 18915426.86     557668 2001-04
+   2001      5 19786451.19     584690 2001-05
+   2001      6 19399244.10     562702 2001-06
+meilleur mois : ['2003-10', np.float64(20632952.65)]
+moins bon mois : ['2005-12', np.float64(8078218.76)]
+repartition des 12 meilleurs mois par mois civil : {'07': np.int64(4), '10': np.int64(3), '03': np.int64(2), '12': np.int64(1), '06': np.int64(1), '08': np.int64(1)}
+
+## analyse 2 : comparaison des 12 magasins
+ s_store_sk s_store_name      ca_net  quantites        marge  transactions  panier_moyen
+          7      Buffalo 98950137.76    2915053 -47643702.48          7645      12943.12
+          4      Elmwood 96770105.59    2832572 -46245313.52          7462      12968.39
+          9   Germantown 96748356.68    2830684 -46015802.68          7435      13012.56
+          0       Forest 96727851.94    2830581 -46086598.19          7456      12973.16
+          8 Williamstown 96578622.89    2821869 -45837269.98          7414      13026.52
+          3      Pioneer 96063990.59    2800824 -45725385.12          7396      12988.64
+          1     Hillside 95929844.66    2817524 -46172561.01          7422      12925.07
+         11      Bedford 95607843.48    2790631 -45346473.98          7449      12834.99
+          6   Bloomfield 94751173.08    2780253 -45805948.18          7284      13008.12
+         10       Avalon 94263977.55    2785773 -46326552.26          7409      12722.90
+          5        Egypt 94097279.37    2789703 -46285140.04          7369      12769.34
+          2     Sherwood 94040402.78    2760007 -45062627.38          7359      12778.96
+ecart max/min vs moyenne : 5.12 %
+
+## analyse 3 : CA net par categorie de produit (complement)
+              i_category       ca_net  quantites
+                   Music 519666693.84   15238374
+                   Books 307151503.25    9007511
+             Movies & TV  74735891.89    2189279
+  Clothing & Accessories  56754855.82    1640550
+             Electronics  55715087.49    1632098
+          Home & Kitchen  41260511.11    1226839
+       Sports & Outdoors  40926938.33    1209305
+            Toys & Games  27437825.33     809999
+Tools & Home Improvement  26880279.31     801519
+
+fichiers produits :
+   /home/amani/j4_data/outputs/ca_mensuel.csv
+   /home/amani/j4_data/outputs/ca_par_annee.csv
+   /home/amani/j4_data/outputs/ca_par_categorie.csv
+   /home/amani/j4_data/outputs/ca_par_magasin.csv
+   /home/amani/j4_data/outputs/kpi.csv
+   /home/amani/j4_data/outputs/stats_descriptives.csv
+   /home/amani/j4_data/visualisations/visualisation_1_ca_par_magasin.png
+   /home/amani/j4_data/visualisations/visualisation_2_evolution_ca_mensuel.png
+   /home/amani/j4_data/visualisations/visualisation_3_ca_par_categorie.png
+TERMINE

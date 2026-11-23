@@ -1,0 +1,8 @@
+id,nom,formule,valeur,unite
+K01,Chiffre d'affaires net magasin,SUM(ss_net_paid),1150529586.37,$
+K03,Nombre de transactions,COUNT(DISTINCT ss_ticket_number),89100.0,tickets
+K04,Panier moyen,K01 / K03,12912.79,$/transaction
+K05,Quantites vendues,SUM(ss_quantity),33755474.0,unites
+K07,Taux de remise,SUM(ss_ext_discount_amt)/SUM(ss_ext_list_price)*100,49.99,%
+K08,Marge nette,SUM(ss_net_profit),-552553374.82,$
+K08b,Taux de marge,K08/K01*100,-48.03,%

@@ -1,0 +1,184 @@
+26/11/21 16:33:07 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/11/21 16:33:07 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/21 16:33:09 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+26/11/21 16:33:38 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+=== NETTOYAGE raw -> silver ===
+mode de lecture : hdfs
+   store_sales  hdfs://localhost:9000/retail-lake/raw/tpcxbb/initial/store_sales.dat
+   item         hdfs://localhost:9000/retail-lake/raw/tpcxbb/initial/item.dat
+   date_dim     hdfs://localhost:9000/retail-lake/raw/tpcxbb/initial/date_dim.dat
+   store        hdfs://localhost:9000/retail-lake/raw/nifi/store.dat
+
+####  item
+schema lu (types explicites) :
+root
+ |-- i_item_sk: long (nullable = true)
+ |-- i_item_id: string (nullable = true)
+ |-- i_rec_start_date: string (nullable = true)
+ |-- i_rec_end_date: string (nullable = true)
+ |-- i_item_desc: string (nullable = true)
+ |-- i_current_price: double (nullable = true)
+ |-- i_wholesale_cost: double (nullable = true)
+ |-- i_brand_id: long (nullable = true)
+ |-- i_brand: string (nullable = true)
+ |-- i_class_id: long (nullable = true)
+ |-- i_class: string (nullable = true)
+ |-- i_category_id: long (nullable = true)
+ |-- i_category: string (nullable = true)
+ |-- i_manufact_id: long (nullable = true)
+ |-- i_manufact: string (nullable = true)
+ |-- i_size: string (nullable = true)
+ |-- i_formulation: string (nullable = true)
+ |-- i_color: string (nullable = true)
+ |-- i_units: string (nullable = true)
+ |-- i_container: string (nullable = true)
+ |-- i_manager_id: long (nullable = true)
+ |-- i_product_name: string (nullable = true)
+
+lignes lues        : 17820
+mises a l'ecart  : 0 (cle requise nulle)
+doublons retires : 0
+lignes conservees: 17820
+silver ecrit dans: /home/amani/j3_data/silver/item
+relecture parquet: 17820 lignes, 22 colonnes
+
+####  store
+schema lu (types explicites) :
+root
+ |-- s_store_sk: long (nullable = true)
+ |-- s_store_id: string (nullable = true)
+ |-- s_rec_start_date: string (nullable = true)
+ |-- s_rec_end_date: string (nullable = true)
+ |-- s_closed_date_sk: long (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- s_number_employees: integer (nullable = true)
+ |-- s_floor_space: integer (nullable = true)
+ |-- s_hours: string (nullable = true)
+ |-- s_manager: string (nullable = true)
+ |-- s_market_id: long (nullable = true)
+ |-- s_geography_class: string (nullable = true)
+ |-- s_market_desc: string (nullable = true)
+ |-- s_market_manager: string (nullable = true)
+ |-- s_division_id: long (nullable = true)
+ |-- s_division_name: string (nullable = true)
+ |-- s_company_id: long (nullable = true)
+ |-- s_company_name: string (nullable = true)
+ |-- s_street_number: string (nullable = true)
+ |-- s_street_name: string (nullable = true)
+ |-- s_street_type: string (nullable = true)
+ |-- s_suite_number: string (nullable = true)
+ |-- s_city: string (nullable = true)
+ |-- s_county: string (nullable = true)
+ |-- s_state: string (nullable = true)
+ |-- s_zip: string (nullable = true)
+ |-- s_country: string (nullable = true)
+ |-- s_gmt_offset: double (nullable = true)
+ |-- s_tax_precentage: double (nullable = true)
+
+lignes lues        : 12
+mises a l'ecart  : 0 (cle requise nulle)
+doublons retires : 0
+lignes conservees: 12
+silver ecrit dans: /home/amani/j3_data/silver/store
+relecture parquet: 12 lignes, 29 colonnes
+
+####  date_dim
+schema lu (types explicites) :
+root
+ |-- d_date_sk: long (nullable = true)
+ |-- d_date_id: string (nullable = true)
+ |-- d_date: date (nullable = true)
+ |-- d_month_seq: long (nullable = true)
+ |-- d_week_seq: long (nullable = true)
+ |-- d_quarter_seq: long (nullable = true)
+ |-- d_year: long (nullable = true)
+ |-- d_dow: long (nullable = true)
+ |-- d_moy: long (nullable = true)
+ |-- d_dom: long (nullable = true)
+ |-- d_qoy: long (nullable = true)
+ |-- d_fy_year: long (nullable = true)
+ |-- d_fy_quarter_seq: long (nullable = true)
+ |-- d_fy_week_seq: long (nullable = true)
+ |-- d_day_name: string (nullable = true)
+ |-- d_quarter_name: string (nullable = true)
+ |-- d_holiday: string (nullable = true)
+ |-- d_weekend: string (nullable = true)
+ |-- d_following_holiday: string (nullable = true)
+ |-- d_first_dom: long (nullable = true)
+ |-- d_last_dom: long (nullable = true)
+ |-- d_same_day_ly: long (nullable = true)
+ |-- d_same_day_lq: long (nullable = true)
+ |-- d_current_day: string (nullable = true)
+ |-- d_current_week: string (nullable = true)
+ |-- d_current_month: string (nullable = true)
+ |-- d_current_quarter: string (nullable = true)
+ |-- d_current_year: string (nullable = true)
+
+lignes lues        : 109573
+mises a l'ecart  : 0 (cle requise nulle)
+doublons retires : 0
+lignes conservees: 109573
+silver ecrit dans: /home/amani/j3_data/silver/date_dim
+relecture parquet: 109573 lignes, 28 colonnes
+
+####  store_sales
+schema lu (types explicites) :
+root
+ |-- ss_sold_date_sk: long (nullable = true)
+ |-- ss_sold_time_sk: long (nullable = true)
+ |-- ss_item_sk: long (nullable = true)
+ |-- ss_customer_sk: long (nullable = true)
+ |-- ss_cdemo_sk: long (nullable = true)
+ |-- ss_hdemo_sk: long (nullable = true)
+ |-- ss_addr_sk: long (nullable = true)
+ |-- ss_store_sk: long (nullable = true)
+ |-- ss_promo_sk: long (nullable = true)
+ |-- ss_ticket_number: long (nullable = true)
+ |-- ss_quantity: integer (nullable = true)
+ |-- ss_wholesale_cost: double (nullable = true)
+ |-- ss_list_price: double (nullable = true)
+ |-- ss_sales_price: double (nullable = true)
+ |-- ss_ext_discount_amt: double (nullable = true)
+ |-- ss_ext_sales_price: double (nullable = true)
+ |-- ss_ext_wholesale_cost: double (nullable = true)
+ |-- ss_ext_list_price: double (nullable = true)
+ |-- ss_ext_tax: double (nullable = true)
+ |-- ss_coupon_amt: double (nullable = true)
+ |-- ss_net_paid: double (nullable = true)
+ |-- ss_net_paid_inc_tax: double (nullable = true)
+ |-- ss_net_profit: double (nullable = true)
+
+lignes lues        : 667579
+mises a l'ecart  : 0 (cle requise nulle)
+doublons retires : 0
+lignes conservees: 667579
+silver ecrit dans: /home/amani/j3_data/silver/store_sales
+relecture parquet: 667579 lignes, 23 colonnes
+
+TERMINE

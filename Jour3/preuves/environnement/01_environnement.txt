@@ -1,0 +1,31 @@
+### date
+Sat Nov 21 16:28:58 WAT 2026
+### os
+Distributor ID:	Ubuntu
+Description:	Ubuntu 16.04.7 LTS
+Release:	16.04
+Codename:	xenial
+Linux ubuntu 4.15.0-142-generic #146~16.04.1-Ubuntu SMP Tue Apr 13 09:27:15 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+### python (env j3)
+Python 3.10.18
+### pyspark
+3.5.5
+### java
+openjdk version "17.0.21" 2026-10-20
+OpenJDK Runtime Environment Temurin-17.0.21+9 (build 17.0.21+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.21+9 (build 17.0.21+9, mixed mode, sharing)
+### mode
+Spark local[2] dans la VM, lecture zone Raw HDFS
+### sources
+Found 3 items
+-rw-r--r--   1 amani supergroup     14.7 M 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial/date_dim.dat
+-rw-r--r--   1 amani supergroup      6.5 M 2026-11-18 16:20 /retail-lake/raw/tpcxbb/initial/item.dat
+-rw-r--r--   1 amani supergroup     88.5 M 2026-11-21 16:14 /retail-lake/raw/tpcxbb/initial/store_sales.dat
+Found 1 items
+-rw-r--r--   1 amani supergroup      3.3 K 2026-11-18 17:04 /retail-lake/raw/nifi/store.dat
+### ressources
+              total        used        free      shared  buff/cache   available
+Mem:           3004        1256         410          11        1337        1518
+/dev/sda1        22G   17G  4.2G  80% /
+### venv
+/home/amani/miniconda3/envs/j3 (conda)

@@ -1,0 +1,73 @@
+26/11/21 16:34:11 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/11/21 16:34:11 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/21 16:34:13 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+                                                                                
+
+                                                                                
+
+                                                                                
+=== TRANSFORMATIONS silver -> gold ===
+silver store_sales : 667579 | date_dim : 109573 | store : 12
+lignes ventes sans date (conservees en silver, exclues du gold) : 0
+jointure ventes->date_dim : orphelins = 0
+jointure ventes->store    : orphelins = 0
+lignes avant jointure : 667579 | apres : 667579
+
+### jeu gold : ventes_mensuelles_magasin
+root
+ |-- s_store_sk: long (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- d_year: long (nullable = true)
+ |-- d_moy: long (nullable = true)
+ |-- ca_net: double (nullable = true)
+ |-- quantite_vendue: long (nullable = true)
+ |-- nb_lignes_vente: long (nullable = false)
+ |-- marge_nette: double (nullable = true)
+
++----------+------------+------+-----+----------+---------------+---------------+-----------+
+|s_store_sk|s_store_name|d_year|d_moy|ca_net    |quantite_vendue|nb_lignes_vente|marge_nette|
++----------+------------+------+-----+----------+---------------+---------------+-----------+
+|0         |Forest      |2001  |1    |1386332.96|44609          |861            |-846846.06 |
+|1         |Hillside    |2001  |1    |1564162.75|47121          |932            |-754801.44 |
+|2         |Sherwood    |2001  |1    |1471262.07|42102          |810            |-647082.55 |
+|3         |Pioneer     |2001  |1    |1657308.51|49402          |987            |-736476.39 |
+|4         |Elmwood     |2001  |1    |1640426.13|48855          |950            |-794777.25 |
+|5         |Egypt       |2001  |1    |1671777.21|50160          |1033           |-834333.25 |
+|6         |Bloomfield  |2001  |1    |1636695.34|46926          |926            |-706645.38 |
+|7         |Buffalo     |2001  |1    |1535619.89|45620          |880            |-746053.08 |
+|8         |Williamstown|2001  |1    |1733989.6 |52840          |1059           |-864906.32 |
+|9         |Germantown  |2001  |1    |1792112.77|53660          |1067           |-938375.18 |
+|10        |Avalon      |2001  |1    |1493402.84|44713          |899            |-698816.12 |
+|11        |Bedford     |2001  |1    |1696543.33|48894          |974            |-827519.73 |
+|0         |Forest      |2001  |2    |1538610.08|47166          |917            |-781128.39 |
+|1         |Hillside    |2001  |2    |1635471.23|46395          |924            |-780377.82 |
+|2         |Sherwood    |2001  |2    |1437365.77|41585          |848            |-683852.13 |
++----------+------------+------+-----+----------+---------------+---------------+-----------+
+only showing top 15 rows
+
+lignes gold : 720
+gold ecrit dans : /home/amani/j3_data/gold/ventes_mensuelles_magasin
+
+### Parquet : ecriture et relecture
+root
+ |-- s_store_sk: long (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- d_year: long (nullable = true)
+ |-- d_moy: long (nullable = true)
+ |-- ca_net: double (nullable = true)
+ |-- quantite_vendue: long (nullable = true)
+ |-- nb_lignes_vente: long (nullable = true)
+ |-- marge_nette: double (nullable = true)
+
+lignes relues : 720
+
+### comparaison des formats (meme jeu gold)
+relecture csv : 720 lignes | relecture json : 720 lignes | parquet : 720
+taille csv      : 36205 octets
+taille json     : 113877 octets
+taille parquet  : 16938 octets
+
+TERMINE

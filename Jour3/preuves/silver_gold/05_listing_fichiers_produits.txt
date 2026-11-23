@@ -1,0 +1,17 @@
+== Jeux de donnees produits (Jour3/) ==
+
+### silver/
+     2400.8 Ko  Jour3/silver/date_dim/part-00000-24429f4a-b032-4711-ac7e-3009fd870220-c000.snappy.parquet
+     1330.9 Ko  Jour3/silver/date_dim/part-00001-24429f4a-b032-4711-ac7e-3009fd870220-c000.snappy.parquet
+     2831.2 Ko  Jour3/silver/item/part-00000-2163aaae-a62c-46e0-8cd7-9db790bcb52f-c000.snappy.parquet
+      686.8 Ko  Jour3/silver/item/part-00001-2163aaae-a62c-46e0-8cd7-9db790bcb52f-c000.snappy.parquet
+       10.9 Ko  Jour3/silver/store/part-00000-807cfe16-93e9-416b-9397-ebe981024e88-c000.snappy.parquet
+    20015.6 Ko  Jour3/silver/store_sales/part-00000-a15104d4-8ce6-4eab-b48f-9d062e58fcb2-c000.snappy.parquet
+    18311.5 Ko  Jour3/silver/store_sales/part-00001-a15104d4-8ce6-4eab-b48f-9d062e58fcb2-c000.snappy.parquet
+
+### gold/
+       16.5 Ko  Jour3/gold/ventes_mensuelles_magasin/part-00000-2e250394-77f8-40a4-8573-efb64df42f7e-c000.snappy.parquet
+
+### parquet/
+       35.4 Ko  Jour3/parquet/gold_csv/part-00000-a99a26a6-454d-49da-a889-8b1b83f87659-c000.csv
+      111.2 Ko  Jour3/parquet/gold_json/part-00000-6a532a17-fb89-4b35-b99a-b3d5a475c219-c000.json

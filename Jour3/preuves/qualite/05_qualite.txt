@@ -1,0 +1,40 @@
+26/11/21 16:34:49 WARN Utils: Your hostname, ubuntu resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+26/11/21 16:34:49 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/11/21 16:34:50 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+
+                                                                                
+
+                                                                                
+
+                                                                                
+
+                                                                                
+=== CONTROLES QUALITE silver / gold ===
+
+volume             | store_sales silver == raw                               | 667579 vs 667579               | OK
+volume             | item silver <= raw                                      | 17820 vs 17820                 | OK
+volume             | store silver <= raw                                     | 12 vs 12                       | OK
+volume             | date_dim silver <= raw                                  | 109573 vs 109573               | OK
+completude         | ss_item_sk non nul                                      | 0                              | OK
+completude         | ss_ticket_number non nul                                | 0                              | OK
+completude         | ss_net_paid non nul                                     | 0                              | OK
+completude         | item.i_item_sk non nul                                  | 0                              | OK
+completude         | store.s_store_sk non nul                                | 0                              | OK
+completude         | date_dim.d_date_sk non nul                              | 0                              | OK
+unicite            | i_item_sk unique                                        | 0                              | OK
+unicite            | s_store_sk unique                                       | 0                              | OK
+unicite            | d_date_sk unique                                        | 0                              | OK
+unicite            | couple (item,ticket) : doublons attendus (constat J1)   | 4136                           | OK
+validite           | ss_net_paid en double                                   | double                         | OK
+validite           | d_date en date                                          | date                           | OK
+coherence          | ext_sales_price ~ quantite x sales_price                | 0                              | OK
+integrite          | ss_item_sk present dans item                            | 0                              | OK
+integrite          | ss_store_sk present dans store                          | 0                              | OK
+integrite          | ss_sold_date_sk present dans date_dim                   | 0                              | OK
+coherence          | somme ca_net gold == somme ss_net_paid silver           | 1150529586.37 vs 1150529586.37 | OK
+
+=== BILAN ===
+21 controles OK / 21
+TERMINE

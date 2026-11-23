@@ -1,0 +1,22 @@
+== Ecriture, relecture et comparaison des formats (jeu Gold) ==
+
+### Parquet : ecriture et relecture
+root
+ |-- s_store_sk: long (nullable = true)
+ |-- s_store_name: string (nullable = true)
+ |-- d_year: long (nullable = true)
+ |-- d_moy: long (nullable = true)
+ |-- ca_net: double (nullable = true)
+ |-- quantite_vendue: long (nullable = true)
+ |-- nb_lignes_vente: long (nullable = true)
+ |-- marge_nette: double (nullable = true)
+
+lignes relues : 720
+
+### comparaison des formats (meme jeu gold)
+relecture csv : 720 lignes | relecture json : 720 lignes | parquet : 720
+taille csv      : 36205 octets
+taille json     : 113877 octets
+taille parquet  : 16938 octets
+
+TERMINE

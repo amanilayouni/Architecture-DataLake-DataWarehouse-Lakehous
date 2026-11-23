@@ -1,0 +1,12 @@
+Inventaire des sources TPCx-BB utilisees (zone Raw du data lake, HDFS)
+====================================================================
+
+fichier           chemin HDFS                                        taille (o)   lignes    colonnes  granularite
+store_sales.dat   /retail-lake/raw/tpcxbb/initial/store_sales.dat    92 764 700   667 579   23        ligne de vente (article x ticket)
+item.dat          /retail-lake/raw/tpcxbb/initial/item.dat            6 799 286    17 820   22        article
+date_dim.dat      /retail-lake/raw/tpcxbb/initial/date_dim.dat       15 395 800   109 573   28        jour calendaire
+store.dat         /retail-lake/raw/nifi/store.dat                     3 386        12      29        magasin (depose par NiFi, Jour 2)
+
+format : texte, separateur '|', sans en-tete, colonne vide finale.
+schema explicite : scripts/tpcxbb_schema.py
+store_sales sha256 : 7e0a7f16b47483741754bb641c92601dd7384dacc8331d0bcfb8abac82ed3d2e
